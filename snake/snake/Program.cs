@@ -30,7 +30,12 @@ namespace Snake
             p.Draw();
 
 
-            Console.ReadLine();
+            employee e = new employee();
+            e.age = 42;
+            e.pay = 900000
+
+
+           Console.ReadLine();
 
         }
 

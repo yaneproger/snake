@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dot1.cs" />
+    <Compile Include="employee.cs" />
     <Compile Include="figure.cs" />
     <Compile Include="horizontalLine.cs" />
+    <Compile Include="human.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
