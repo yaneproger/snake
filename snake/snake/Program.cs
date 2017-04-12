@@ -12,24 +12,22 @@ namespace Snake
     {
         static void Main( string[] args)
         {
-            
-            Point p1 = new Point(15, 1, '*');           
-            p1.Draw();
+             Console.SetBufferSize(80, 80);
 
-            Point p2 = new Point(15, 2, '*');           
-            p2.Draw();
+            verticalLine Lline = new verticalLine(50, 0, 24, '+');
+              Lline.Drow();
 
-            verticalLine vline = new verticalLine(50, 5, 80, '+');
-            vline.Drow();
+            verticalLine Rline = new verticalLine(0, 0, 24, '+');
+              Rline.Drow();
 
+            horizontalLine Uline = new horizontalLine(0, 50, 0, '+');
+              Uline.Drow();
 
+            horizontalLine Dline = new horizontalLine(0, 50, 24, '+');
+              Dline.Drow();
 
-
-           horizontalLine line = new horizontalLine(5, 50, 8, '/');
-               line.Drow();
-
-
-
+            Point p = new Point(5, 5, '*');
+            p.Draw();
 
 
             Console.ReadLine();
