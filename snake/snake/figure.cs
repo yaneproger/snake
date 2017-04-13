@@ -1,4 +1,4 @@
-﻿using Snake;
+﻿using snake;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +18,6 @@ namespace snake
                 p.Draw();
             }
         }
-
-
-
-
 
     }
 }

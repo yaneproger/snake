@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace snake
 {
-    class human
+    enum direction
     {
-        public int age; // возраст
-
+        LEFT,
+        RIGHT,
+        UP,
+        DOWN
     }
 }

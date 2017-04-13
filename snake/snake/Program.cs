@@ -1,12 +1,11 @@
-﻿
-using snake;
+﻿using snake;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Snake
+namespace snake
 {
     class Program
     {
@@ -26,13 +25,11 @@ namespace Snake
             horizontalLine Dline = new horizontalLine(0, 50, 24, '+');
               Dline.Drow();
 
+
+
             Point p = new Point(5, 5, '*');
-            p.Draw();
-
-
-            employee e = new employee();
-            e.age = 42;
-            e.pay = 900000
+            snake snake1 = new snake(p, 5, direction.UP);
+            snake1.Drow();
 
 
            Console.ReadLine();
