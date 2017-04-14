@@ -12,27 +12,21 @@ namespace snake
         public int x;
         public int y;
         public char sym;
-
         public Point()
-        {
-         
+        {       
         }
-
         public Point(int _x, int _y, char _sym)
-
         {
             x = _x;
             y = _y;
             sym = _sym;
-        }
-        
+        }      
         public Point(Point p)
         {
             x = p.x;
             y = p.y;
             sym = p.sym;
         }
-
         public void move(int offset, direction direction)
         {
             if(direction == direction.RIGHT)
@@ -45,11 +39,11 @@ namespace snake
             }
             else if(direction == direction.UP)
             {
-                y = y + offset;
+                y = y - offset;
             }
             else if(direction == direction.DOWN)
             {
-                y = y - offset;
+                y = y + offset;
             }
         }
         public void Draw()
@@ -57,6 +51,13 @@ namespace snake
            Console.SetCursorPosition(x, y);
            Console.Write(sym);
         }
+
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
+
 
         public override string ToString()
         {
