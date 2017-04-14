@@ -33,27 +33,15 @@ namespace snake
             //отрисовка точек
 
             Point p = new Point(40, 5, ')');
-            snake snake1 = new snake(p, 5, direction.LEFT);
+            snake snake1 = new snake(p, 5, direction.RIGHT );
             snake1.Draw();
-
 
             while (true)
             {
                 if(Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
-
-                    //   public void handlekey(ConsoleKey but)
-                    {
-                        if (key.Key == ConsoleKey.LeftArrow)
-                            snake1.direction = direction.LEFT;
-                        else if (key.Key == ConsoleKey.RightArrow)
-                            snake1.direction = direction.RIGHT;
-                        else if (key.Key == ConsoleKey.UpArrow)
-                            snake1.directon = direction.UP;
-                        else if (key.Key == ConsoleKey.DownArrow)
-                            snake1.direction = direction.DOWN;
-                        
+                    snake1.HandleKey(key.Key);
                     }
                                        
                     Thread.Sleep(100);
@@ -66,4 +54,4 @@ namespace snake
             }
         }
     }
-}
+
