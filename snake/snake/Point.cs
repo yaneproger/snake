@@ -29,22 +29,28 @@ namespace snake
         }
         public void move(int offset, direction direction)
         {
-            if(direction == direction.RIGHT)
-            {
-                x = x + offset;
-            }
-            else if(direction == direction.LEFT)
+            if(direction == direction.LEFT)
             {
                 x = x - offset;
             }
-            else if(direction == direction.UP)
+            else if(direction == direction.RIGHT)
             {
-                y = y - offset;
+                x = x + offset;
             }
-            else if(direction == direction.DOWN)
+            else if(direction == direction.UP)
             {
                 y = y + offset;
             }
+            else if(direction == direction.DOWN)
+            {
+                y = y - offset;
+            }
+        }
+
+
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
         }
         public void Draw()
         {
@@ -63,5 +69,6 @@ namespace snake
         {
             return x + ", " + y + ", " + sym;
         }
+
     }
 }

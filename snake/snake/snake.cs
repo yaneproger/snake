@@ -9,8 +9,8 @@ namespace snake
 {
     class snake : figure
     {
-        public direction direction;
-        internal direction directon;
+                
+        direction direction;
 
         public snake(Point tail, int lenght, direction _direction)
         {
@@ -43,18 +43,31 @@ namespace snake
             nextPoint.move(1, direction);
             return nextPoint;
         }
- /*       
-        public void handlekey(ConsoleKey but)
+       
+        public void handlekey(ConsoleKey key)
         {
-            if (but.key == ConsoleKey.LeftArrow)
-                snake1.direction = direction.LEFT;
-            else if (but.key == ConsoleKey.RightArrow)
-                snake1.direction = direction.RIGHT;
-            else if (but.key == ConsoleKey.DownArrow)
-                snake1.direction = direction.DOWN;
-            else if (but.key == ConsoleKey.UpArrow)
-                snake1.directon = direction.UP;
+            if (key == ConsoleKey.LeftArrow)
+                direction = direction.LEFT;
+            else if (key == ConsoleKey.RightArrow)
+                direction = direction.RIGHT;
+            else if (key == ConsoleKey.DownArrow)
+                direction = direction.UP;
+            else if (key == ConsoleKey.UpArrow)
+                direction = direction.DOWN;
 
-        }      */
+        }
+
+        internal bool eat(Point food)
+        {
+            Point head = getnextpoint();
+            if ( head.IsHit(food) )
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

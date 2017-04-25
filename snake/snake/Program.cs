@@ -15,55 +15,53 @@ namespace snake
 
             //отрисовка рамки
 
-            Console.SetBufferSize(85, 25);
-            Console.SetWindowSize(85, 25);
+            Console.SetBufferSize(100, 100);
+            //    Console.SetWindowSize(85, 80);
 
-            verticalLine Lline = new verticalLine(80, 0, 24, '+');
-            Lline.Draw();
-
-            verticalLine Rline = new verticalLine(0, 0, 24, '+');
-            Rline.Draw();
-
-            horizontalLine Uline = new horizontalLine(0, 80, 0, '+');
+            horizontalLine Uline = new horizontalLine(0, 70, 0, '-');            
+            horizontalLine Dline = new horizontalLine(0, 70, 24, '-');            
+            verticalLine Lline = new verticalLine(70, 0, 24, '|');            
+            verticalLine Rline = new verticalLine(0, 0, 24, '|');
+            
             Uline.Draw();
-
-            horizontalLine Dline = new horizontalLine(0, 80, 24, '+');
             Dline.Draw();
+            Lline.Draw();
+            Rline.Draw();
 
             //отрисовка точек
 
-            Point p = new Point(40, 5, ')');
-            snake snake1 = new snake(p, 5, direction.LEFT);
-            snake1.Draw();
+            Point p = new Point(4, 5, '*');
+            snake Snake = new snake(p, 5, direction.RIGHT);
+            Snake.Draw();
 
+            foodcreator foodcreator = new foodcreator(80, 25, '$');
+            Point food = foodcreator.createfood();
+            food.Draw();
 
             while (true)
-            {
-                if(Console.KeyAvailable)
+            {   
+                if(Snake.eat( food ))
+                {
+                    food = foodcreator.createfood();
+                    food.Draw();
+                }
+                else
+                {
+                    Snake.move();
+                }
+
+                Thread.Sleep(100);
+
+                if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
-
-                    //   public void handlekey(ConsoleKey but)
-                    {
-                        if (key.Key == ConsoleKey.LeftArrow)
-                            snake1.direction = direction.LEFT;
-                        else if (key.Key == ConsoleKey.RightArrow)
-                            snake1.direction = direction.RIGHT;
-                        else if (key.Key == ConsoleKey.UpArrow)
-                            snake1.directon = direction.UP;
-                        else if (key.Key == ConsoleKey.DownArrow)
-                            snake1.direction = direction.DOWN;
-                        
-                    }
-                                       
+                    Snake.handlekey(key.Key);
+                }                                                        
                     Thread.Sleep(100);
-                    snake1.move();
-
-                  //  Console.ReadLine();
-
+                    Snake.move();
                 }
 
             }
         }
     }
-}
+
