@@ -13,20 +13,12 @@ namespace snake
         static void Main(string[] args)
         {
 
-            //отрисовка рамки
+            Console.SetBufferSize(80, 25);
 
-            Console.SetBufferSize(100, 100);
-            //    Console.SetWindowSize(85, 80);
 
-            horizontalLine Uline = new horizontalLine(0, 70, 0, '-');            
-            horizontalLine Dline = new horizontalLine(0, 70, 24, '-');            
-            verticalLine Lline = new verticalLine(70, 0, 24, '|');            
-            verticalLine Rline = new verticalLine(0, 0, 24, '|');
-            
-            Uline.Draw();
-            Dline.Draw();
-            Lline.Draw();
-            Rline.Draw();
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
+
 
             //отрисовка точек
 
