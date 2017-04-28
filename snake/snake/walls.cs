@@ -8,10 +8,6 @@ namespace snake
 {
     class walls
     {
-
-
-
-
             List<Figure> wallList;
             public Walls(int mapWidth, int mapHeight)
             {
@@ -46,31 +42,4 @@ namespace snake
                 }
             }
         }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
 }
