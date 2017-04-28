@@ -36,6 +36,11 @@ namespace snake
             tail.Clear();
             head.Draw();
         }
+
+
+
+
+
         public Point getnextpoint()
         {
             Point head = pList.Last();
@@ -71,3 +76,6 @@ namespace snake
         }
     }
 }
+
+
+

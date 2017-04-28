@@ -16,7 +16,7 @@ namespace snake
             Console.SetBufferSize(80, 25);
 
 
-            Walls walls = new Walls(80, 25);
+            walls walls = new walls(80, 25);
             walls.Draw();
 
 
@@ -31,8 +31,13 @@ namespace snake
             food.Draw();
 
             while (true)
-            {   
-                if(Snake.eat( food ))
+            {
+              if (walls.IsHit(Snake) || snake.IsHitTail())
+                    {
+                        break;
+                    }
+
+               if (Snake.eat( food ))
                 {
                     food = foodcreator.createfood();
                     food.Draw();
@@ -41,7 +46,6 @@ namespace snake
                 {
                     Snake.move();
                 }
-
                 Thread.Sleep(100);
 
                 if (Console.KeyAvailable)
@@ -49,11 +53,9 @@ namespace snake
                     ConsoleKeyInfo key = Console.ReadKey();
                     Snake.handlekey(key.Key);
                 }                                                        
-                    Thread.Sleep(100);
-                    Snake.move();
+                    
                 }
 
             }
-        }
-    }
-
+      }
+}

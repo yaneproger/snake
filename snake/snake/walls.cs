@@ -1,4 +1,5 @@
-﻿using System;
+﻿using snake;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,10 @@ namespace snake
 {
     class walls
     {
-            List<Figure> wallList;
-            public Walls(int mapWidth, int mapHeight)
+            List<figure> wallList;
+            public walls(int mapWidth, int mapHeight)
             {
-                wallList = new List<Figure>();
+                wallList = new List<figure>();
 
                 // Отрисовка рамочки
                 HorizontalLine upLine = new HorizontalLine(0, mapWidth - 2, 0, '+');
@@ -23,7 +24,7 @@ namespace snake
                 wallList.Add(leftLine);
                 wallList.Add(rightLine);
             }
-            internal bool IsHit(Figure figure)
+            internal bool IsHit(figure figure)
             {
                 foreach (var wall in wallList)
                 {
@@ -41,5 +42,14 @@ namespace snake
                     wall.Draw();
                 }
             }
-        }
+      }
 }
+
+
+
+
+
+
+
+
+
