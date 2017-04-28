@@ -13,23 +13,10 @@ namespace snake
             {
                 pList = new List<Point>();
                 for(int x = xLeft; x <= xRight; x++)
-              {
+                {
                 Point p = new Point(x, y, sym);
                 pList.Add(p);
-              }
+                }
             }
-        public override void Draw()
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-
-
-
-
-            base.Draw();
-
-            Console.ForegroundColor = ConsoleColor.White;
-
-        }
-
-    }
+     }
 }
