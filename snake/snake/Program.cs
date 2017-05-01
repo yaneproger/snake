@@ -22,12 +22,12 @@ namespace snake
             snake Snake = new snake(p, 5, direction.RIGHT);
             Snake.Draw();
 
-            foodcreator foodcreator = new foodcreator(80, 25, '$');
+            foodcreator foodcreator = new foodcreator(80, 25, '%');
             Point food = foodcreator.createfood();
             food.Draw();
 
             while (true)
-              {
+            {
               if (walls.IsHit(Snake) || Snake.IsHitTail())
                     {
                         break;
@@ -47,10 +47,10 @@ namespace snake
                     {
                     ConsoleKeyInfo key = Console.ReadKey();
                     Snake.handlekey(key.Key);
-                    }                                                        
+                   }                                                        
                     
                 }
 
-           }
+            }
       }
 }
